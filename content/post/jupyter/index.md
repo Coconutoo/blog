@@ -1,77 +1,27 @@
 ---
-title: Display Jupyter Notebooks with Academic
-subtitle: Learn how to blog in Academic using Jupyter notebooks
-summary: Learn how to blog in Academic using Jupyter notebooks
+title: Системы контроля версий git.
+subtitle: Сегодня мы рассмотрим системы управления версиями git.
+summary: Сегодня мы рассмотрим системы управления версиями git.
 authors:
   - admin
 tags: []
 categories: []
 projects: []
-date: '2019-02-05T00:00:00Z'
-lastMod: '2019-09-05T00:00:00Z'
+date: '2023-04-08T01:14:00Z'
+lastMod: '2023-04-08T01:14:00Z'
 image:
   caption: ''
   focal_point: ''
 ---
 
-```python
-from IPython.core.display import Image
-Image('https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png')
-```
+Системы контроля версий (Version Control System, VCS) применяются при работе нескольких человек над одним проектом. Обычно основное дерево проекта хранится в локальном или удалённом репозитории, к которому настроен доступ для участников проекта. При внесении изменений в содержание проекта система контроля версий позволяет их фиксировать, совмещать изменения, произведённые разными участниками проекта, производить откат к любой более ранней версии проекта, если это требуется.
 
-![png](./index_1_0.png)
+В классических системах контроля версий используется централизованная модель, предполагающая наличие единого репозитория для хранения файлов. Выполнение большинства функций по управлению версиями осуществляется специальным сервером. Участник проекта (пользователь) перед началом работы посредством определённых команд получает нужную ему версию файлов. После внесения изменений, пользователь размещает новую версию в хранилище. При этом предыдущие версии не удаляются из центрального хранилища и к ним можно вернуться в любой момент. Сервер может сохранять не полную версию изменённых файлов, а производить так называемую дельта-компрессию — сохранять только изменения между последовательными версиями, что позволяет уменьшить объём хранимых данных.
 
-```python
-print("Welcome to Academic!")
-```
+Системы контроля версий поддерживают возможность отслеживания и разрешения конфликтов, которые могут возникнуть при работе нескольких человек над одним файлом. Можно объединить (слить) изменения, сделанные разными участниками (автоматически или вручную), вручную выбрать нужную версию, отменить изменения вовсе или заблокировать файлы для изменения. В зависимости от настроек блокировка не позволяет другим пользователям получить рабочую копию или препятствует изменению рабочей копии файла средствами файловой системы ОС, обеспечивая таким образом, привилегированный доступ только одному пользователю, работающему с файлом.
 
-    Welcome to Academic!
+Системы контроля версий также могут обеспечивать дополнительные, более гибкие функциональные возможности. Например, они могут поддерживать работу с несколькими версиями одного файла, сохраняя общую историю изменений до точки ветвления версий и собственные истории изменений каждой ветви. Кроме того, обычно доступна информация о том, кто из участников, когда и какие изменения вносил. Обычно такого рода информация хранится в журнале изменений, доступ к которому можно ограничить.
 
-## Install Python and JupyterLab
+В отличие от классических, в распределённых системах контроля версий центральный репозиторий не является обязательным.
 
-[Install Anaconda](https://www.anaconda.com/distribution/#download-section) which includes Python 3 and JupyterLab.
-
-Alternatively, install JupyterLab with `pip3 install jupyterlab`.
-
-## Create or upload a Jupyter notebook
-
-Run the following commands in your Terminal, substituting `<MY-WEBSITE-FOLDER>` and `<SHORT-POST-TITLE>` with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:
-
-```bash
-mkdir -p <MY-WEBSITE-FOLDER>/content/post/<SHORT-POST-TITLE>/
-cd <MY-WEBSITE-FOLDER>/content/post/<SHORT-POST-TITLE>/
-jupyter lab index.ipynb
-```
-
-The `jupyter` command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.
-
-## Edit your post metadata
-
-The first cell of your Jupter notebook will contain your post metadata ([front matter](https://sourcethemes.com/academic/docs/front-matter/)).
-
-In Jupter, choose _Markdown_ as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:
-
-```
----
-title: My post's title
-date: 2019-09-01
-
-# Put any other Academic metadata here...
----
-```
-
-Edit the metadata of your post, using the [documentation](https://sourcethemes.com/academic/docs/managing-content) as a guide to the available options.
-
-To set a [featured image](https://sourcethemes.com/academic/docs/managing-content/#featured-image), place an image named `featured` into your post's folder.
-
-For other tips, such as using math, see the guide on [writing content with Academic](https://wowchemy.com/docs/content/writing-markdown-latex/).
-
-## Convert notebook to Markdown
-
-```bash
-jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
-```
-
-## Example
-
-This post was created with Jupyter. The orginal files can be found at https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter
+Среди классических VCS наиболее известны CVS, Subversion, а среди распределённых — Git, Bazaar, Mercurial. Принципы их работы схожи, отличаются они в основном синтаксисом используемых в работе команд.
