@@ -19,7 +19,7 @@ sections:
         - name: Управление linux
           description: 50%
           icon: fedora
-          icon_pack: fas
+          icon_pack: fab
         - name: Английский язык
           description: 60%
           icon: a
