@@ -16,16 +16,16 @@ sections:
     content:
       title: Skills
       items:
-        - name: R
-          description: 90%
-          icon: r-project
-          icon_pack: fab
-        - name: Statistics
-          description: 100%
-          icon: chart-line
+        - name: Управление linux
+          description: 50%
+          icon: fedora
           icon_pack: fas
-        - name: Photography
-          description: 10%
+        - name: Английский язык
+          description: 60%
+          icon: a
+          icon_pack: fas
+        - name: Фотография
+          description: 70%
           icon: camera-retro
           icon_pack: fas
   - block: experience
